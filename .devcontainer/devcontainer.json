@@ -1,0 +1,39 @@
+// 适用于前端打赏页面项目的 Codespace 配置
+// 文档: https://containers.dev/implementors/json_reference/
+{
+    "name": "Buy Me A Coffee Dev",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+
+    // 启动时自动安装的 VS Code 插件
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.tabSize": 4,
+                "editor.wordWrap": "on",
+                "liveServer.settings.donotVerifyInfo": true,
+                "liveServer.settings.donotShowInfoMsg": true,
+                "liveServer.settings.port": 5500,
+                "liveServer.settings.host": "0.0.0.0"
+            },
+            "extensions": [
+                "ritwickdey.liveserver",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "ecmel.vscode-html-css",
+                "zignd.html-css-class-completion",
+                "ms-vscode.live-server"
+            ]
+        }
+    },
+
+    // 端口转发配置（让本地预览能访问）
+    "forwardPorts": [5500, 8080, 3000],
+
+    // 启动后自动执行的命令
+    "postCreateCommand": "echo '✅ 开发环境已就绪！' && echo '📂 项目目录: /workspace/buy-me-a-coffee' && echo '🚀 启动预览: 在 buy-me-a-coffee/index.html 上右键 -> Open with Live Server'",
+
+    // 以非 root 用户运行（更安全）
+    "remoteUser": "node"
+}
